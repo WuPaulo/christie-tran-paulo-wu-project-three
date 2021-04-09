@@ -324,3 +324,18 @@ header {
         opacity: 100;
     }
 }
+
+footer {
+    background: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-wrapper {
+    text-align: center;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+}
