@@ -1,33 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const RestArea = () => {
     const [userSelect, setUserSelect] = useState("");
 
+    useEffect(() => {
+        const proxiedUrl = "https://511on.ca/api/v2/get/allrestareas";
+
+        const url = new URL("http://proxy.hackeryou.com");
+        url.search = new URLSearchParams({
+            reqUrl: proxiedUrl,
+        });
+
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+            });
+    });
+
     // Created handle changes for select and input form
-    const handleRegionChange = () => {
-        console.log("Region changed");
-    };
+    // const handleRegionChange = (e) => {
+    //     console.log(e.target.value);
+    // };
 
-    const handleDirectionChange = () => {
-        console.log("Direction changed");
-    };
+    // const handleDirectionChange = () => {
+    //     console.log("Direction changed");
+    // };
 
-    const handleRoadwayChange = () => {
-        console.log("Roadway changed");
-    };
+    // const handleRoadwayChange = () => {
+    //     console.log("Roadway changed");
+    // };
 
-    const handleAreaChange = () => {
-        console.log("Type area changed");
-    };
+    // const handleAreaChange = () => {
+    //     console.log("Type area changed");
+    // };
 
-    const handleFuelChange = () => {
-        console.log("Fuel changed");
-    };
+    // const handleFuelChange = () => {
+    //     console.log("Fuel changed");
+    // };
 
-    const handleAccessibilityChange = () => {
-        console.log("Accessibility changed");
-    };
+    // const handleAccessibilityChange = () => {
+    //     console.log("Accessibility changed");
+    // };
 
+    const handleChange = (e) => {
+        console.log(e.target.value);
+    };
     return (
         <main>
             {/* Main wrapper starts */}
@@ -43,7 +61,7 @@ const RestArea = () => {
                             <select
                                 name=""
                                 id="region-select"
-                                onChange={handleRegionChange}
+                                onChange={handleChange}
                             >
                                 <option value="" disabled selected>
                                     --Select Region--
@@ -70,7 +88,7 @@ const RestArea = () => {
                             <select
                                 name=""
                                 id="roadway-select"
-                                onChange={handleRoadwayChange}
+                                onChange={handleChange}
                             >
                                 <option value="" disabled selected>
                                     --Select Roadway--
@@ -94,7 +112,7 @@ const RestArea = () => {
                             <select
                                 name=""
                                 id="direciton-select"
-                                onChange={handleDirectionChange}
+                                onChange={handleChange}
                             >
                                 <option value="" disabled selected>
                                     --Select Direction--
@@ -117,7 +135,7 @@ const RestArea = () => {
                             <select
                                 name=""
                                 id="area-type-select"
-                                onChange={handleAreaChange}
+                                onChange={handleChange}
                             >
                                 <option value="" disabled selected>
                                     --Select Area Type--
@@ -157,7 +175,7 @@ const RestArea = () => {
                                 name="fuel"
                                 id="fuel-yes"
                                 value="Y"
-                                onChange={handleFuelChange}
+                                onChange={handleChange}
                             />
                         </div>
                         <div>
@@ -167,7 +185,7 @@ const RestArea = () => {
                                 name="fuel"
                                 id="fuel-no"
                                 value="N"
-                                onChange={handleFuelChange}
+                                onChange={handleChange}
                             />
                         </div>
 
@@ -180,7 +198,7 @@ const RestArea = () => {
                                 name="accesibility"
                                 id="accesibility-yes"
                                 value="Y"
-                                onChange={handleAccessibilityChange}
+                                onChange={handleChange}
                             />
                         </div>
                         <div>
@@ -190,7 +208,7 @@ const RestArea = () => {
                                 name="accesibility"
                                 id="accesibility-no"
                                 value="N"
-                                onChange={handleAccessibilityChange}
+                                onChange={handleChange}
                             />
                         </div>
                     </div>
