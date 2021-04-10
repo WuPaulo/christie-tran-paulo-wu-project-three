@@ -1,15 +1,51 @@
+import { useState } from "react";
+
 const RestArea = () => {
+    const [userSelect, setUserSelect] = useState("");
+
+    // Created handle changes for select and input form
+    const handleRegionChange = () => {
+        console.log("Region changed");
+    };
+
+    const handleDirectionChange = () => {
+        console.log("Direction changed");
+    };
+
+    const handleRoadwayChange = () => {
+        console.log("Roadway changed");
+    };
+
+    const handleAreaChange = () => {
+        console.log("Type area changed");
+    };
+
+    const handleFuelChange = () => {
+        console.log("Fuel changed");
+    };
+
+    const handleAccessibilityChange = () => {
+        console.log("Accessibility changed");
+    };
+
     return (
         <main>
+            {/* Main wrapper starts */}
             <div className="main-wrapper">
                 <form>
+                    {/* Select dropdown menus */}
                     <div className="select-container">
+                        {/* Region select dropdown */}
                         <div className="select-inner-container">
                             <label htmlFor="region-select" className="sr-only">
                                 Regions
                             </label>
-                            <select name="" id="region-select">
-                                <option value="" disabled>
+                            <select
+                                name=""
+                                id="region-select"
+                                onChange={handleRegionChange}
+                            >
+                                <option value="" disabled selected>
                                     --Select Region--
                                 </option>
                                 <option value="Central">Central</option>
@@ -26,12 +62,17 @@ const RestArea = () => {
                             </select>
                         </div>
 
+                        {/* Roadway select dropdown */}
                         <div className="select-inner-container">
                             <label htmlFor="roadway-select" className="sr-only">
                                 Roadway
                             </label>
-                            <select name="" id="roadway-select">
-                                <option value="" disabled>
+                            <select
+                                name=""
+                                id="roadway-select"
+                                onChange={handleRoadwayChange}
+                            >
+                                <option value="" disabled selected>
                                     --Select Roadway--
                                 </option>
                                 <option value="Highway 7">Highway 7</option>
@@ -42,6 +83,7 @@ const RestArea = () => {
                             </select>
                         </div>
 
+                        {/* Direction select dropdown */}
                         <div className="select-inner-container">
                             <label
                                 htmlFor="direciton-select"
@@ -49,8 +91,12 @@ const RestArea = () => {
                             >
                                 Direction
                             </label>
-                            <select name="" id="direciton-select">
-                                <option value="" disabled>
+                            <select
+                                name=""
+                                id="direciton-select"
+                                onChange={handleDirectionChange}
+                            >
+                                <option value="" disabled selected>
                                     --Select Direction--
                                 </option>
                                 <option value="Northbound">Northbound</option>
@@ -60,6 +106,7 @@ const RestArea = () => {
                             </select>
                         </div>
 
+                        {/* Area type select dropdown */}
                         <div className="select-inner-container">
                             <label
                                 htmlFor="area-type-select"
@@ -67,8 +114,12 @@ const RestArea = () => {
                             >
                                 Area Type
                             </label>
-                            <select name="" id="area-type-select">
-                                <option value="" disabled>
+                            <select
+                                name=""
+                                id="area-type-select"
+                                onChange={handleAreaChange}
+                            >
+                                <option value="" disabled selected>
                                     --Select Area Type--
                                 </option>
                                 <option value="Carpool Lot">Carpool Lot</option>
@@ -95,17 +146,32 @@ const RestArea = () => {
                             </select>
                         </div>
                     </div>
+
                     <div className="radio-container">
+                        {/* Fuel radio input starts */}
                         <p>Fuel:</p>
                         <div>
                             <label htmlFor="fuel-yes">Y</label>
-                            <input type="radio" name="fuel" id="fuel-yes" />
+                            <input
+                                type="radio"
+                                name="fuel"
+                                id="fuel-yes"
+                                value="Y"
+                                onChange={handleFuelChange}
+                            />
                         </div>
                         <div>
                             <label htmlFor="fuel-no">N</label>
-                            <input type="radio" name="fuel" id="fuel-no" />
+                            <input
+                                type="radio"
+                                name="fuel"
+                                id="fuel-no"
+                                value="N"
+                                onChange={handleFuelChange}
+                            />
                         </div>
 
+                        {/* Accessibility radio inout starts */}
                         <p>Accesibility:</p>
                         <div>
                             <label htmlFor="accesibility-yes">Y</label>
@@ -113,6 +179,8 @@ const RestArea = () => {
                                 type="radio"
                                 name="accesibility"
                                 id="accesibility-yes"
+                                value="Y"
+                                onChange={handleAccessibilityChange}
                             />
                         </div>
                         <div>
@@ -121,11 +189,17 @@ const RestArea = () => {
                                 type="radio"
                                 name="accesibility"
                                 id="accesibility-no"
+                                value="N"
+                                onChange={handleAccessibilityChange}
                             />
                         </div>
                     </div>
+
+                    {/* Search button start */}
                     <button className="btn-search">Search</button>
                 </form>
+
+                {/* Result display here */}
                 <div></div>
             </div>
         </main>
