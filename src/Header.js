@@ -20,7 +20,7 @@ const Header = () => {
                         </ul>
                     </nav>
                     {/* Header button for showing navigation menu in mobile version */}
-                    <button
+                    <button  
                         className="btn-radar"
                         aria-label="Opening or closing navigation menu button"
                     >
@@ -32,19 +32,19 @@ const Header = () => {
                         />
                     </button>
                 </div>
-                <div className="header-description">
-                    <div class="description-container">
+                <div className="header-description"> 
+                    <div className="description-container">
                         <h2>Welcome to Road Radar</h2>
-                        <div class="upper-triangle"></div>
-                        <div class="first-circle"></div>
-                        <div class="second-circle"></div>
-                        <div class="third-circle"></div>
-                        <div class="fourth-circle"></div>
-                        <div class="light-circle"></div>
-                        <div class="triangle"></div>
-                        <div class="inner-triangle"></div>
-                        <div class="lower-triangle"></div>
-                        <div class="bottom-stand"></div>
+                        <div className="upper-triangle"></div>
+                        <div className="first-circle"></div>
+                        <div className="second-circle"></div>
+                        <div className="third-circle"></div>
+                        <div className="fourth-circle"></div>
+                        <div className="light-circle"></div>
+                        <div className="triangle"></div>
+                        <div className="inner-triangle"></div>
+                        <div className="lower-triangle"></div>
+                        <div className="bottom-stand"></div>
                     </div>
                     <div className="description-content">
                         <p>
