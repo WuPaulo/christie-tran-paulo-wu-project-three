@@ -9,6 +9,7 @@ const Select = ({ id, values, onValueChange, selectedValue }) => {
                 defaultValue={selectedValue}
                 onChange={({ target: { value } }) => onValueChange(value)}
             >
+                {/* map the array of options for the select dropdown */}
                 {values.map(([value, text]) => (
                     <option key={value} value={value}>
                         {text}

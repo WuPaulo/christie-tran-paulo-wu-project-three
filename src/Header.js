@@ -1,6 +1,7 @@
 // Import fontawesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSatelliteDish } from "@fortawesome/free-solid-svg-icons";
+import logo from "./assests/road-radar-logo.png";
 
 const Header = () => {
     return (
@@ -9,7 +10,7 @@ const Header = () => {
                 <div className="header-menu">
                     {/* Header logo */}
                     <div className="header-logo">
-                        <img src="" alt="Road radar logo" />
+                        <img src={logo} alt="Road radar logo" />
                     </div>
                     {/* Header navigation menu */}
                     <nav className="header-nav">
@@ -20,7 +21,7 @@ const Header = () => {
                         </ul>
                     </nav>
                     {/* Header button for showing navigation menu in mobile version */}
-                    <button  
+                    <button
                         className="btn-radar"
                         aria-label="Opening or closing navigation menu button"
                     >
@@ -32,7 +33,8 @@ const Header = () => {
                         />
                     </button>
                 </div>
-                <div className="header-description"> 
+                {/* Radar animation container */}
+                <div className="header-description">
                     <div className="description-container">
                         <h2>Welcome to Road Radar</h2>
                         <div className="upper-triangle"></div>
@@ -46,6 +48,7 @@ const Header = () => {
                         <div className="lower-triangle"></div>
                         <div className="bottom-stand"></div>
                     </div>
+                    {/* App description */}
                     <div className="description-content">
                         <p>
                             Road Radar is an app that specializes in generating
