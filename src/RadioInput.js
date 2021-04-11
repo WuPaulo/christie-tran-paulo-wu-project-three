@@ -8,7 +8,6 @@ const RadioInput = ({ label, value, checked, setter }) => {
                     checked={checked === value}
                     onChange={() => {
                         setter(value);
-                        console.log(value);
                     }}
                 />
             </label>

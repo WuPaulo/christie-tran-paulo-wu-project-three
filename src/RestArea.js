@@ -4,9 +4,13 @@ import RadioInput from "./RadioInput.js";
 import { regions, roadways, directions, areaTypes } from "./selectArrays";
 
 const RestArea = () => {
-    const [userSelect, setUserSelect] = useState();
+    const [regionSelect, setRegionSelect] = useState("");
+    const [roadwaySelect, setRoadwaySelect] = useState("");
+    const [directionSelect, setDirectionSelect] = useState("");
+    const [areaTypeSelect, setAreaTypeSelect] = useState("");
     const [fuel, setFuel] = useState();
     const [accesibility, setAccesibility] = useState();
+    const [results, setResults] = useState([]);
 
     useEffect(() => {
         const proxiedUrl = "https://511on.ca/api/v2/get/allrestareas";
@@ -18,16 +22,22 @@ const RestArea = () => {
 
         fetch(url)
             .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
+            .then((datas) => {
+                console.log(datas);
+                setResults(datas);
             });
     }, []);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Submitted");
+    };
 
     return (
         <main>
             {/* Main wrapper starts */}
             <div className="main-wrapper">
-                <form>
+                <form onSubmit={handleSubmit}>
                     {/* Select dropdown menus */}
                     <div className="select-container">
                         {/* Region select dropdown */}
@@ -36,7 +46,10 @@ const RestArea = () => {
                                 id="Regions"
                                 values={regions}
                                 selectedValue="Select Region"
-                                onValueChange={(val) => console.log(val)}
+                                onValueChange={(val) => {
+                                    console.log(val);
+                                    setRegionSelect(val);
+                                }}
                             />
                         </div>
 
@@ -46,7 +59,10 @@ const RestArea = () => {
                                 id="Roadway"
                                 values={roadways}
                                 selectedValue="Select Roadway"
-                                onValueChange={(val) => console.log(val)}
+                                onValueChange={(val) => {
+                                    console.log(val);
+                                    setRoadwaySelect(val);
+                                }}
                             />
                         </div>
 
@@ -56,7 +72,10 @@ const RestArea = () => {
                                 id="Directions"
                                 values={directions}
                                 selectedValue="Select Direction"
-                                onValueChange={(val) => console.log(val)}
+                                onValueChange={(val) => {
+                                    console.log(val);
+                                    setDirectionSelect(val);
+                                }}
                             />
                         </div>
 
@@ -66,7 +85,10 @@ const RestArea = () => {
                                 id="Area Types"
                                 values={areaTypes}
                                 selectedValue="Select Area Type"
-                                onValueChange={(val) => console.log(val)}
+                                onValueChange={(val) => {
+                                    console.log(val);
+                                    setAreaTypeSelect(val);
+                                }}
                             />
                         </div>
                     </div>
@@ -108,11 +130,26 @@ const RestArea = () => {
                     </div>
 
                     {/* Search button start */}
-                    <button className="btn-search">Search</button>
+                    <button type="submit" className="btn-search">
+                        Search
+                    </button>
                 </form>
 
                 {/* Result display here */}
-                <div></div>
+                <div>
+                    {results.map((result) => {
+                        return (
+                            <div>
+                                <p>
+                                    Accessibility: {result.Accessible}, Fuel:
+                                    {result.Fuel}, Roadway: {result.Roadway},
+                                    Area Type: {result.Type}, Direction:{" "}
+                                    {result.Direction}, Region: {result.Region}
+                                </p>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
         </main>
     );
