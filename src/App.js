@@ -4,7 +4,6 @@ import Footer from "./Footer.js";
 import RestArea from "./RestArea.js";
 
 function App() {
-
     return (
         <div className="App">
             <Header />
