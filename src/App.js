@@ -21,27 +21,27 @@ function App() {
         });
 
         // Fetch data from the server
-        //     fetch(`https://511on.ca/api/v2/get/allrestareas`)
-        //         .then((response) => response.json())
-        //         .then((datas) => {
-        //             // Filter only rest areas are open
-        //             const openedData = datas.filter((data) => data.Open === "Open");
-        //             // Update the result when the component mounted
-        //             setResults(openedData);
-        //         });
-        // }, []);
-
-        axios({
-            url: url,
-            method: `GET`,
-            dataResponse: "json",
-        }).then((datas) => {
-            // Filter only rest areas are open
-            const openedData = datas.filter((data) => data.Open === "Open");
-            // Update the result when the component mounted
-            setResults(openedData);
-        });
+        fetch(url)
+            .then((response) => response.json())
+            .then((datas) => {
+                // Filter only rest areas are open
+                const openedData = datas.filter((data) => data.Open === "Open");
+                // Update the result when the component mounted
+                setResults(openedData);
+            });
     }, []);
+
+    // axios({
+    //     url: url,
+    //     method: `GET`,
+    //     dataResponse: "json",
+    // }).then((datas) => {
+    //     // Filter only rest areas are open
+    //     const openedData = datas.filter((data) => data.Open === "Open");
+    //     // Update the result when the component mounted
+    //     setResults(openedData);
+    // });
+    // }, []);
 
     // handleSubmit function to update the change of form select
     const handleSubmit = (e, region, areaType) => {
