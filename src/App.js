@@ -4,7 +4,6 @@ import Header from "./Header.js";
 import RestArea from "./RestArea.js";
 import DisplayResults from "./DisplayResults.js";
 import Footer from "./Footer.js";
-import axios from "axios";
 
 function App() {
     // Create useState for result after the user click the search button
@@ -30,18 +29,6 @@ function App() {
                 setResults(openedData);
             });
     }, []);
-
-    // axios({
-    //     url: url,
-    //     method: `GET`,
-    //     dataResponse: "json",
-    // }).then((datas) => {
-    //     // Filter only rest areas are open
-    //     const openedData = datas.filter((data) => data.Open === "Open");
-    //     // Update the result when the component mounted
-    //     setResults(openedData);
-    // });
-    // }, []);
 
     // handleSubmit function to update the change of form select
     const handleSubmit = (e, region, areaType) => {
