@@ -493,6 +493,78 @@ footer {
   }
 }
 
+@media (max-width: 500px) {
+  .description-container {
+    width: 300px;
+    height: 350px;
+  }
+
+  .first-circle {
+    width: 200px;
+    height: 200px;
+    left: 17.5%;
+    bottom: 35%;
+  }
+
+  .second-circle {
+    width: 130px;
+    height: 130px;
+    left: 29%;
+    bottom: 45%;
+  }
+
+  .third-circle {
+    width: 80px;
+    height: 80px;
+    left: 37%;
+    bottom: 52%;
+  }
+
+  .fourth-circle {
+    width: 30px;
+    height: 30px;
+    left: 45%;
+    bottom: 59%;
+  }
+
+  .light-circle {
+    width: 15px;
+    height: 15px;
+    left: 47.5%;
+    bottom: 61%;
+  }
+
+  .bottom-stand {
+    left: 8%;
+  }
+
+  .triangle {
+    left: 22%;
+  }
+
+  .inner-triangle {
+    left: 24%;
+    border-left: 71px solid transparent;
+    border-right: 75px solid transparent;
+  }
+
+  .upper-triangle,
+  .lower-triangle {
+    left: -2%;
+    width: 310px;
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+  }
+
+  .upper-triangle {
+    top: 1%;
+  }
+
+  .lower-triangle {
+    bottom: 29%;
+  }
+}
+
 @media (max-width: 480px) {
   .header-logo {
     margin-bottom: 30px;
