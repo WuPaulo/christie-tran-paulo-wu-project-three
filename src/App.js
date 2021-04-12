@@ -32,7 +32,7 @@ function App() {
         // }, []);
 
         axios({
-            url: proxiedUrl,
+            url: url,
             method: `GET`,
             dataResponse: "json",
         }).then((datas) => {
