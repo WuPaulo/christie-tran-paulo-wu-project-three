@@ -1,7 +1,6 @@
 // Import fontawesome icons
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSatelliteDish } from "@fortawesome/free-solid-svg-icons";
 import logo from "./assests/road-radar-logo.png";
+import Navbar from "./Navbar";
 
 const Header = () => {
   return (
@@ -13,25 +12,8 @@ const Header = () => {
             <img src={logo} alt="Road radar logo" />
           </div>
           {/* Header navigation menu */}
-          <nav className="header-nav">
-            <ul className="header-list">
-              <li className="header-item">
-                <a href="#">rest areas</a>
-              </li>
-            </ul>
-          </nav>
-          {/* Header button for showing navigation menu in mobile version */}
-          <button
-            className="btn-radar"
-            aria-label="Opening or closing navigation menu button"
-          >
-            <FontAwesomeIcon
-              icon={faSatelliteDish}
-              size="2x"
-              spin
-              aria-hidden="false"
-            />
-          </button>
+
+          <Navbar />
         </div>
         {/* Radar animation container */}
         <div className="header-description">
