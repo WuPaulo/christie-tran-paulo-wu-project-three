@@ -124,9 +124,12 @@ header {
 
 .header-list {
   list-style-type: none;
+  display: flex;
+  align-items: center;
 }
 
 .header-list a {
+  margin-left: 20px;
   padding: 10px;
   border: 1px solid transparent;
   border-radius: 20px;
@@ -144,7 +147,7 @@ header {
 }
 
 .header-list.showMenu {
-  display: block;
+  visibility: visible;
 }
 
 .btn-radar {
@@ -378,7 +381,7 @@ select,
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  padding: 50px 15px;
+  padding: 50px 0;
 }
 
 .region-container,
@@ -484,12 +487,39 @@ footer {
     width: 70vw;
   }
 
+  .header-list {
+    visibility: hidden;
+    flex-direction: column;
+  }
+
   .header-logo {
-    flex: 0 1 100px;
+    flex: 0 1 150px;
   }
 
   .header-list a {
     font-size: 0.8em;
+  }
+
+  .header-menu {
+    flex-direction: column;
+  }
+
+  .header-logo {
+    margin-bottom: 10px;
+    width: 100px;
+    align-self: flex-start;
+  }
+
+  .header-list :first-child {
+    margin-bottom: 50px;
+  }
+
+  .header-item a {
+    font-size: 1em;
+  }
+
+  .btn-radar {
+    visibility: visible;
   }
 
   h1 {
@@ -570,28 +600,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .header-logo {
-    margin-bottom: 30px;
-    width: 100px;
-    align-self: flex-start;
-  }
-
-  .header-list {
-    display: none;
-  }
-
-  .header-menu {
-    flex-direction: column;
-  }
-
-  .btn-radar {
-    visibility: visible;
-  }
-
-  .header-item a {
-    font-size: 1em;
-  }
-
   html {
     font-size: 0.8em;
   }
@@ -603,5 +611,9 @@ footer {
 
   .result {
     padding: 20px;
+  }
+
+  .header-logo {
+    flex: 0 1 100px;
   }
 }
