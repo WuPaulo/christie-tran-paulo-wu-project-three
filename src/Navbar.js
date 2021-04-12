@@ -22,10 +22,10 @@ const Navbar = () => {
             </button>
             <ul className={`header-list ${navbarOpen ? "showMenu" : ""}`}>
                 <li className="header-item">
-                    <a href="">Rest Areas</a>
+                    <a href="/#">Rest Areas</a>
                 </li>
                 <li className="header-item">
-                    <a href="">Road Conditions</a>
+                    <a href="/#">Road Conditions</a>
                 </li>
             </ul>
         </nav>
