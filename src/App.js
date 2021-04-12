@@ -4,6 +4,7 @@ import Header from "./Header.js";
 import RestArea from "./RestArea.js";
 import DisplayResults from "./DisplayResults.js";
 import Footer from "./Footer.js";
+import axios from "axios";
 
 function App() {
     // Create useState for result after the user click the search button
@@ -20,14 +21,26 @@ function App() {
         // });
 
         // Fetch data from the server
-        fetch(`https://511on.ca/api/v2/get/allrestareas`)
-            .then((response) => response.json())
-            .then((datas) => {
-                // Filter only rest areas are open
-                const openedData = datas.filter((data) => data.Open === "Open");
-                // Update the result when the component mounted
-                setResults(openedData);
-            });
+        //     fetch(`https://511on.ca/api/v2/get/allrestareas`)
+        //         .then((response) => response.json())
+        //         .then((datas) => {
+        //             // Filter only rest areas are open
+        //             const openedData = datas.filter((data) => data.Open === "Open");
+        //             // Update the result when the component mounted
+        //             setResults(openedData);
+        //         });
+        // }, []);
+
+        axios({
+            url: `https://511on.ca/api/v2/get/allrestareas`,
+            method: `GET`,
+            dataResponse: "json",
+        }).then((datas) => {
+            // Filter only rest areas are open
+            const openedData = datas.filter((data) => data.Open === "Open");
+            // Update the result when the component mounted
+            setResults(openedData);
+        });
     }, []);
 
     // handleSubmit function to update the change of form select
