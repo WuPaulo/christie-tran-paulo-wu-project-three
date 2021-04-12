@@ -14,11 +14,11 @@ function App() {
     // Create useEffect to fetch data from API call and run just once
     useEffect(() => {
         // Create proxy server to avoid CORS policy
-        // const proxiedUrl = "https://511on.ca/api/v2/get/allrestareas";
-        // const url = new URL("http://proxy.hackeryou.com");
-        // url.search = new URLSearchParams({
-        //   reqUrl: proxiedUrl,
-        // });
+        const proxiedUrl = "https://511on.ca/api/v2/get/allrestareas";
+        const url = new URL("http://proxy.hackeryou.com");
+        url.search = new URLSearchParams({
+            reqUrl: proxiedUrl,
+        });
 
         // Fetch data from the server
         //     fetch(`https://511on.ca/api/v2/get/allrestareas`)
@@ -32,7 +32,7 @@ function App() {
         // }, []);
 
         axios({
-            url: `https://511on.ca/api/v2/get/allrestareas`,
+            url: proxiedUrl,
             method: `GET`,
             dataResponse: "json",
         }).then((datas) => {
