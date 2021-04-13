@@ -43,7 +43,7 @@ function App() {
         // Prevent the page refreshing
         e.preventDefault();
         // Set the userSearch to true to display the result
-        setUserSearch(!userSearch);
+        setUserSearch(true);
         // Copy a new array of result from API call by array destrucring
         const copyResults = [...results];
         // Create a new filtered array of result to check if all of selects are true
