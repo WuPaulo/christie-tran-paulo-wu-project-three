@@ -387,6 +387,10 @@ select,
     width: calc(100% / 3);
 }
 
+.submit-container {
+    width: 17%;
+}
+
 .region-container select,
 .area-container select {
     width: 80%;
@@ -441,6 +445,7 @@ select,
 }
 
 .display-message {
+    padding: 40px;
     text-align: center;
 }
 
@@ -477,6 +482,10 @@ footer {
     .region-container,
     .area-container {
         width: 50vw;
+    }
+
+    .submit-container {
+        width: 33%;
     }
 }
 
