@@ -34,7 +34,7 @@ const Header = () => {
                     <div className="description-content">
                         <p>
                             Road Radar is an app that specializes in generating
-                            data for travelers to find information on public
+                            data for travellers to find information on public
                             services such as rest areas, road conditions and
                             more.
                         </p>
