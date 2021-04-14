@@ -13,7 +13,7 @@ const Navbar = ({ handleClick }) => {
     return (
         <nav className="header-nav">
             {/* Header button for showing navigation menu in mobile version */}
-            <button className="btn-radar" onClick={handleToggle}>
+            <button className="btn-radar" onClick={handleToggle} aria-label="Radar icon to navigate the menu on mobile screen devices">
                 <FontAwesomeIcon
                     icon={faSatelliteDish}
                     size="3x"

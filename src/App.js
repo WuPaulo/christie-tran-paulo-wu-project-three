@@ -171,6 +171,7 @@ function App() {
                     StopPosition={0}
                     ShowAtPosition={800}
                     EasingType="easeInBounce"
+                    tabIndex="0"
                 />
             </main>
             {/* Footer component */}
