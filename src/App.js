@@ -67,12 +67,9 @@ function App() {
                 return response.json();
             })
             .then((datas) => {
-                // Filter only rest areas are open
-                const cameraData = datas.filter((data) => {
-                    if (data.CityName !== "" && data.Status === "Enabled") {
-                        return data;
-                    }
-                });
+                const cameraData = datas.filter(
+                    (data) => data.CityName !== "" && data.Status === "Enabled"
+                );
                 // Update the result when the component mounted
                 setRoadCameraResults(cameraData);
             });
