@@ -35,8 +35,7 @@ const Header = () => {
                         <p>
                             Road Radar is an app that specializes in generating
                             data for travellers to find information on public
-                            services such as rest areas, road conditions and
-                            more.
+                            services such as rest areas, road camera and more.
                         </p>
                         <p>
                             Our app allows the user to access a list of data

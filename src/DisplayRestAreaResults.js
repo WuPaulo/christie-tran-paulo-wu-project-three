@@ -1,15 +1,15 @@
-const DisplayResults = ({ filteredResult, userSearch }) => {
+const DisplayRestAreaResults = ({ filteredRestAreaResult, userSearch }) => {
     return (
         <>
             {/* Check if the array is empty and the form is submitted, display the message */}
-            {userSearch === true && filteredResult.length === 0 ? (
+            {userSearch === true && filteredRestAreaResult.length === 0 ? (
                 <h2 className="display-message">
                     No results found! Try again!
                 </h2>
             ) : (
                 //Filter the array of result and display it on the page when there is data available
                 <div className="result-container">
-                    {filteredResult.map((result, index) => {
+                    {filteredRestAreaResult.map((result, index) => {
                         return (
                             <div key={index} className="result">
                                 <h3>{result.Name}</h3>
@@ -26,7 +26,12 @@ const DisplayResults = ({ filteredResult, userSearch }) => {
                                             ? result.Direction
                                             : "N/A"}
                                     </li>
-                                    <li>Location: {result.Location}</li>
+                                    <li>
+                                        Location:{" "}
+                                        {result.Location !== ""
+                                            ? result.Location
+                                            : "N/A"}
+                                    </li>
                                     <li>
                                         Accessibility:
                                         {result.Accessible === "Y"
@@ -60,4 +65,4 @@ const DisplayResults = ({ filteredResult, userSearch }) => {
     );
 };
 
-export default DisplayResults;
+export default DisplayRestAreaResults;
