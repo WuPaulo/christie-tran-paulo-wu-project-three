@@ -16,6 +16,7 @@ const RestArea = ({ handleRestAreaSubmit }) => {
             >
                 {/* Select dropdown menus */}
                 <div className="select-outter-container">
+                    <h2>Rest Area</h2>
                     <div className="select-container">
                         {/* Region select dropdown */}
                         <div className="region-container">

@@ -385,7 +385,9 @@ select,
 }
 
 .region-container,
-.area-container {
+.area-container,
+.city-name-container,
+.road-camera-container {
     width: calc(100% / 3);
 }
 
@@ -394,7 +396,9 @@ select,
 }
 
 .region-container select,
-.area-container select {
+.area-container select,
+.city-name-container select,
+.road-camera-container select {
     width: 80%;
 }
 
@@ -404,6 +408,10 @@ select,
     padding-bottom: 50px;
     border-radius: 20px;
     background: #f6f5f5;
+}
+
+.select-outter-container h2 {
+    padding-top: 20px;
 }
 
 .btn-scroll-up {
@@ -493,12 +501,15 @@ footer {
         align-items: center;
     }
 
-    .area-container {
+    .area-container,
+    .road-camera-container {
         margin: 20px 0;
     }
 
     .region-container,
-    .area-container {
+    .area-container,
+    .city-name-container,
+    .road-camera-container {
         width: 50vw;
     }
 
@@ -519,7 +530,9 @@ footer {
     }
 
     .region-container,
-    .area-container {
+    .area-container,
+    .city-name-container,
+    .road-camera-container {
         width: 70vw;
     }
 

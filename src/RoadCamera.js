@@ -16,9 +16,10 @@ const RoadCamera = ({ handleRoadCameraSubmit }) => {
             >
                 {/* Select dropdown menus */}
                 <div className="select-outter-container">
+                    <h2>Road Camera</h2>
                     <div className="select-container">
                         {/* City Name select dropdown */}
-                        <div className="region-container">
+                        <div className="city-name-container">
                             <Select
                                 id="City Names"
                                 values={cityNames}
@@ -30,7 +31,7 @@ const RoadCamera = ({ handleRoadCameraSubmit }) => {
                         </div>
 
                         {/* Area type select dropdown */}
-                        <div className="area-container">
+                        <div className="road-camera-container">
                             <Select
                                 id="Roadway"
                                 values={roadway}

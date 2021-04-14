@@ -22,27 +22,24 @@ const Navbar = ({ handleClick }) => {
                 />
             </button>
             <ul className={`header-list ${navbarOpen ? "showMenu" : ""}`}>
-                <li className="header-item">
-                    {/* Used react scroll and Link element to scroll to the specific section */}
-                    <Link
-                        to="rest-area"
-                        spy={true}
-                        smooth={true}
-                        onClick={() => handleClick(true)}
-                    >
-                        Rest Areas
-                    </Link>
-                </li>
-                <li className="header-item">
-                    <Link
-                        to="road-camera"
-                        spy={true}
-                        smooth={true}
-                        onClick={() => handleClick(false)}
-                    >
-                        Road Camera
-                    </Link>
-                </li>
+                {/* Used react scroll and Link element to scroll to the specific section */}
+                <Link
+                    to="rest-area"
+                    spy={true}
+                    smooth={true}
+                    onClick={() => handleClick(true)}
+                >
+                    <li className="header-item">Rest Areas</li>
+                </Link>
+
+                <Link
+                    to="road-camera"
+                    spy={true}
+                    smooth={true}
+                    onClick={() => handleClick(false)}
+                >
+                    <li className="header-item">Road Camera</li>{" "}
+                </Link>
             </ul>
         </nav>
     );
