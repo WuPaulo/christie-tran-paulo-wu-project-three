@@ -1,5 +1,5 @@
 // Import fontawesome icons
-import logo from "./assests/road-radar-logo.png";
+import logo from "../assets/road-radar-logo.png";
 import Navbar from "./Navbar";
 
 const Header = ({ handleClick }) => {

@@ -1,5 +1,5 @@
 import Select from "./Select.js";
-import { cityNames, roadway } from "./selectArrays";
+import { cityNames, roadway } from "../selectArrays";
 import { useState } from "react";
 
 const RoadCamera = ({ handleRoadCameraSubmit }) => {
