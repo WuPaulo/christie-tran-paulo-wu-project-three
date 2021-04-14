@@ -341,7 +341,7 @@ h1 {
 /* main styling */
 main {
     background: #f6f5f5;
-    position: relative;
+    /* position: relative; */
 }
 
 form {
@@ -415,13 +415,19 @@ select,
 }
 
 .btn-scroll-up {
-    position: absolute;
-    right: 20px;
-    bottom: 15px;
-    border: none;
-    background: transparent;
+    position: fixed;
+    right: -100px;
+    bottom: 70px;
+    transition: right 0.5s;
     cursor: pointer;
+    background: transparent;
+    border: none;
+    color: #f39b28;
     animation: bounce 1s infinite;
+}
+
+.btn-scroll-up-transition {
+    right: 7px;
 }
 
 /* Rest area esults container styling */
