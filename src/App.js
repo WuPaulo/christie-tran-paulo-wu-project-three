@@ -7,8 +7,6 @@ import DisplayRestAreaResults from "./components/DisplayRestAreaResults.js";
 import DisplayRoadCameraResults from "./components/DisplayRoadCameraResults.js";
 import Footer from "./components/Footer.js";
 import ScrollUpButton from "react-scroll-up-button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
     // Create useState for result after the user click the search button
@@ -161,19 +159,19 @@ function App() {
                 </div>
                 {/* Button to scroll up to the top page */}
                 <ScrollUpButton
+                    style={{
+                        backgroundColor: "#f39b28",
+                        border: "1px solid #f39b28",
+                        borderRadius: "50%",
+                        padding: "5px",
+                        bottom: "75px",
+                        outline: "none",
+                    }}
                     ContainerClassName="btn-scroll-up"
-                    TransitionClassName="btn-scroll-up-transition"
                     StopPosition={0}
                     ShowAtPosition={800}
                     EasingType="easeInBounce"
-                >
-                    <FontAwesomeIcon
-                        icon={faArrowCircleUp}
-                        size="3x"
-                        aria-hidden="false"
-                    />
-                </ScrollUpButton>
-                {/* Link to target the click scroll to the top page */}
+                />
             </main>
             {/* Footer component */}
             <Footer />

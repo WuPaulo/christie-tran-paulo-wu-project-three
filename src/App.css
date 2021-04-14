@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 /* Setup snippet */
 * {
@@ -116,7 +117,7 @@ h1 {
 }
 
 .header-item {
-    margin-left: 20px;
+    margin: 10px;
     padding: 10px;
     border: 1px solid transparent;
     border-radius: 20px;
@@ -131,8 +132,8 @@ h1 {
     color: #226089;
 }
 
-.header-item:hover,
-.header-item:focus {
+.header-item a:hover,
+.header-item a:focus {
     background: #f39b28;
 }
 
@@ -159,7 +160,6 @@ h1 {
 
 .header-description {
     text-align: center;
-    text-shadow: 0.5px 0.5px 5px #fff;
 }
 
 .description-content {
@@ -168,6 +168,7 @@ h1 {
 
 .description-content p {
     padding-top: 10px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .description-content p:first-child {
@@ -415,19 +416,7 @@ select,
 }
 
 .btn-scroll-up {
-    position: fixed;
-    right: -100px;
-    bottom: 70px;
-    transition: right 0.5s;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    color: #f39b28;
     animation: bounce 1s infinite;
-}
-
-.btn-scroll-up-transition {
-    right: 7px;
 }
 
 /* Rest area esults container styling */
