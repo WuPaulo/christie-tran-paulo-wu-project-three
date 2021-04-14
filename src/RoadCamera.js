@@ -1,30 +1,30 @@
 import Select from "./Select.js";
-import { regions, areaTypes } from "./selectArrays";
+import { cityNames, roadway } from "./selectArrays";
 import { useState } from "react";
 
-const RestArea = ({ handleRestAreaSubmit }) => {
+const RoadCamera = ({ handleRoadCameraSubmit }) => {
     // Create useState for form select
-    const [regionSelect, setRegionSelect] = useState("Select Region");
-    const [areaTypeSelect, setAreaTypeSelect] = useState("Select Area Type");
+    const [cityNameSelect, setCityNameSelect] = useState("Select City Name");
+    const [roadwaySelect, setRoadwaySelect] = useState("Select Roadway");
 
     return (
         <>
             <form
                 onSubmit={(e) =>
-                    handleRestAreaSubmit(e, regionSelect, areaTypeSelect)
+                    handleRoadCameraSubmit(e, cityNameSelect, roadwaySelect)
                 }
             >
                 {/* Select dropdown menus */}
                 <div className="select-outter-container">
                     <div className="select-container">
-                        {/* Region select dropdown */}
+                        {/* City Name select dropdown */}
                         <div className="region-container">
                             <Select
-                                id="Regions"
-                                values={regions}
-                                selectedValue="Select Region"
+                                id="City Names"
+                                values={cityNames}
+                                selectedValue="Select City Name"
                                 onValueChange={(val) => {
-                                    setRegionSelect(val);
+                                    setCityNameSelect(val);
                                 }}
                             />
                         </div>
@@ -32,11 +32,11 @@ const RestArea = ({ handleRestAreaSubmit }) => {
                         {/* Area type select dropdown */}
                         <div className="area-container">
                             <Select
-                                id="Area Types"
-                                values={areaTypes}
-                                selectedValue="Select Area Type"
+                                id="Roadway"
+                                values={roadway}
+                                selectedValue="Select Roadway"
                                 onValueChange={(val) => {
-                                    setAreaTypeSelect(val);
+                                    setRoadwaySelect(val);
                                 }}
                             />
                         </div>
@@ -48,7 +48,7 @@ const RestArea = ({ handleRestAreaSubmit }) => {
                         </div>
                     </div>
                     <p>
-                        Select the region as well as the area type of your
+                        Select the city name as well as the roaway of your
                         choice from the dropdown menus, to search and generate
                         data that matches!
                     </p>
@@ -58,4 +58,4 @@ const RestArea = ({ handleRestAreaSubmit }) => {
     );
 };
 
-export default RestArea;
+export default RoadCamera;

@@ -123,9 +123,12 @@ h1 {
     background-color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-    color: #226089;
     transition: 200ms ease-in-out;
     cursor: pointer;
+}
+
+.header-item a {
+    color: #226089;
 }
 
 .header-item:hover,
@@ -134,7 +137,6 @@ h1 {
 }
 
 .header-list.showMenu {
-    /* visibility: visible; */
     display: flex;
     padding-bottom: 30px;
 }
@@ -407,20 +409,20 @@ select,
 .btn-scroll-up {
     position: absolute;
     right: 20px;
-    bottom: 30px;
+    bottom: 15px;
     border: none;
     background: transparent;
     cursor: pointer;
     animation: bounce 1s infinite;
 }
 
-/* results container styling */
+/* Rest area esults container styling */
 .result-container {
     padding: 40px 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
-    grid-gap: 50px 20px;
+    grid-gap: 30px 20px;
     place-items: stretch center;
 }
 
@@ -447,6 +449,22 @@ select,
 .display-message {
     padding: 40px;
     text-align: center;
+}
+
+/* Road camera results container styling */
+.result h4 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.road-camera-description {
+    padding-top: 20px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.road-camera-description ul {
+    list-style-type: none;
 }
 
 /* footer styling */
@@ -613,6 +631,9 @@ footer {
     h1 {
         margin-top: 30px;
         font-size: 1.7em;
+    }
+    .main-wrapper {
+        padding: 70px 20px;
     }
 
     .result {
