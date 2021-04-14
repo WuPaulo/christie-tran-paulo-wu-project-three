@@ -12,7 +12,12 @@ import { Link } from "react-scroll";
 
 function App() {
     // Create useState for result after the user click the search button
-    const [userSearch, setUserSearch] = useState(false);
+    // Toggle state if the user click the search button
+    const [userRestAreaSearch, setUserRestAreaSearch] = useState(false);
+    const [userRoadCameraSearch, setUserRoadCameraSearch] = useState(false);
+    // Toggle state if the user click different sections
+    const [toggleSection, setToggleSection] = useState(true);
+    // State to update the results from the form
     const [restAreaResults, setRestAreaResults] = useState([]);
     const [filteredRestAreaResult, setFilteredRestAreaResult] = useState([]);
     const [roadCameraResults, setRoadCameraResults] = useState([]);
@@ -77,8 +82,8 @@ function App() {
     const handleRestAreaSubmit = (e, region, areaType) => {
         // Prevent the page refreshing
         e.preventDefault();
-        // Set the userSearch to true to display the result
-        setUserSearch(true);
+        // Set the userRestAreaSearch to true to display the result
+        setUserRestAreaSearch(true);
         // Copy a new array of result from API call by array destrucring
         const copyRestAreaResults = [...restAreaResults];
         // Create a new filtered array of result to check if all of selects are true
@@ -93,8 +98,8 @@ function App() {
     const handleRoadCameraSubmit = (e, cityName, roadway) => {
         // Prevent the page refreshing
         e.preventDefault();
-        // Set the userSearch to true to display the result
-        setUserSearch(true);
+        // Set the userRoadCameraSearch to true to display the result
+        setUserRoadCameraSearch(true);
         // Copy a new array of result from API call by array destrucring
         const copyRoadCameraResults = [...roadCameraResults];
         // Create a new filtered array of result to check if all of selects are true
@@ -110,39 +115,59 @@ function App() {
         setFilteredRoadCameraResult(filteredRoadCameraResult);
     };
 
+    // handdleClick to toggle the section on the page
+    const handleClick = (bool) => {
+        setToggleSection(bool);
+        // reset toogle the state of search button in the form to empty the result when changing the section
+        if (bool === true) {
+            setUserRoadCameraSearch(false);
+        } else {
+            setUserRestAreaSearch(false);
+        }
+    };
+
     return (
         <div className="App" id="home-page">
             {/* Header component */}
-            <Header />
+            <Header handleClick={handleClick} />
 
             <main>
                 {/* Main wrapper starts */}
                 <div className="main-wrapper">
-                    <div id="rest-area">
-                        {/* Rest area form section */}
-                        <RestArea handleRestAreaSubmit={handleRestAreaSubmit} />
-                        {/* Rest area result display here */}
-                        <DisplayRestAreaResults
-                            filteredRestAreaResult={filteredRestAreaResult}
-                            userSearch={userSearch}
-                        />
-                    </div>
-                    <div id="road-camera">
-                        {/* Road camera form section */}
-                        <RoadCamera
-                            handleRoadCameraSubmit={handleRoadCameraSubmit}
-                        />
-                        {/* Road camera result display here */}
-                        <DisplayRoadCameraResults
-                            filteredRoadCameraResult={filteredRoadCameraResult}
-                            userSearch={userSearch}
-                        />
-                    </div>
+                    {/* Togle the click button to choose the section and show the content of that section on the page */}
+                    {toggleSection === true ? (
+                        <div id="rest-area">
+                            {/* Rest area form section */}
+                            <RestArea
+                                handleRestAreaSubmit={handleRestAreaSubmit}
+                            />
+                            {/* Rest area result display here */}
+                            <DisplayRestAreaResults
+                                filteredRestAreaResult={filteredRestAreaResult}
+                                userRestAreaSearch={userRestAreaSearch}
+                            />
+                        </div>
+                    ) : (
+                        <div id="road-camera">
+                            <RoadCamera
+                                handleRoadCameraSubmit={handleRoadCameraSubmit}
+                            />
+                            {/* Road camera result display here */}
+                            <DisplayRoadCameraResults
+                                filteredRoadCameraResult={
+                                    filteredRoadCameraResult
+                                }
+                                userRoadCameraSearch={userRoadCameraSearch}
+                            />
+                        </div>
+                    )}
                 </div>
+                {/* Button to scroll up to the top page */}
                 <button
                     className="btn-scroll-up"
                     aria-label="Button scrolls to the top of the page"
                 >
+                    {/* Link to target the click scroll to the top page */}
                     <Link to="home-page" spy={true} smooth={true}>
                         <FontAwesomeIcon
                             icon={faArrowCircleUp}

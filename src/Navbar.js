@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSatelliteDish } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 
-const Navbar = () => {
+const Navbar = ({ handleClick }) => {
     const [navbarOpen, setNavbarOpen] = useState(false);
 
     const handleToggle = () => {
@@ -23,13 +23,23 @@ const Navbar = () => {
             </button>
             <ul className={`header-list ${navbarOpen ? "showMenu" : ""}`}>
                 <li className="header-item">
-                    {/* Used react scroll and Link element to scroll to element */}
-                    <Link to="rest-area" spy={true} smooth={true}>
+                    {/* Used react scroll and Link element to scroll to the specific section */}
+                    <Link
+                        to="rest-area"
+                        spy={true}
+                        smooth={true}
+                        onClick={() => handleClick(true)}
+                    >
                         Rest Areas
                     </Link>
                 </li>
                 <li className="header-item">
-                    <Link to="road-camera" spy={true} smooth={true}>
+                    <Link
+                        to="road-camera"
+                        spy={true}
+                        smooth={true}
+                        onClick={() => handleClick(false)}
+                    >
                         Road Camera
                     </Link>
                 </li>

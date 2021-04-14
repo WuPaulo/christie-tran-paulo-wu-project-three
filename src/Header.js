@@ -2,7 +2,7 @@
 import logo from "./assests/road-radar-logo.png";
 import Navbar from "./Navbar";
 
-const Header = () => {
+const Header = ({ handleClick }) => {
     return (
         <header>
             <div className="header-wrapper">
@@ -13,7 +13,7 @@ const Header = () => {
                     </div>
                     {/* Header navigation menu */}
 
-                    <Navbar />
+                    <Navbar handleClick={handleClick} />
                 </div>
                 {/* Radar animation container */}
                 <div className="header-description">

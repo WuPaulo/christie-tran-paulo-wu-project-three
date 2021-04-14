@@ -123,9 +123,12 @@ h1 {
     background-color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-    color: #226089;
     transition: 200ms ease-in-out;
     cursor: pointer;
+}
+
+.header-item a {
+    color: #226089;
 }
 
 .header-item:hover,
@@ -406,7 +409,7 @@ select,
 .btn-scroll-up {
     position: absolute;
     right: 20px;
-    bottom: 30px;
+    bottom: 15px;
     border: none;
     background: transparent;
     cursor: pointer;
