@@ -1,5 +1,5 @@
 import Select from "./Select.js";
-import { regions, areaTypes } from "./selectArrays";
+import { regions, areaTypes } from "../selectArrays";
 import { useState } from "react";
 
 const RestArea = ({ handleRestAreaSubmit }) => {

@@ -1,11 +1,11 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Header from "./Header.js";
-import RestArea from "./RestArea.js";
-import RoadCamera from "./RoadCamera";
-import DisplayRestAreaResults from "./DisplayRestAreaResults.js";
-import DisplayRoadCameraResults from "./DisplayRoadCameraResults.js";
-import Footer from "./Footer.js";
+import Header from "./components/Header.js";
+import RestArea from "./components/RestArea.js";
+import RoadCamera from "./components/RoadCamera";
+import DisplayRestAreaResults from "./components/DisplayRestAreaResults.js";
+import DisplayRoadCameraResults from "./components/DisplayRoadCameraResults.js";
+import Footer from "./components/Footer.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
